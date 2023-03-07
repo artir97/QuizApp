@@ -21,8 +21,8 @@ nav a {
 /* Menu */
 .menu {
     background-color: #27355c;
-    height: 480px;
-    width: 10rem;
+    height: 570px;
+    width: 12rem;
 
     border-radius: 0.375rem 0 0  0.375rem;
 }
@@ -36,4 +36,19 @@ nav a {
 .main-card {
     border-radius: 0 0.375rem 0.375rem 0px!important;
     width: 600px!important;
+}
+
+.question-footer {
+    border-top: 1px solid #49577e;
+    padding-top: 12px;
+    justify-content: space-between;
+}
+
+.btn {
+    background-color: #27355c!important;
+    color: #fff!important;
+}
+
+.btn:hover {
+    background-color: #49577e!important;
 }
