@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 
-<body>
+<body onload="init()">
     <nav class="navbar fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Quizzapp</a>
@@ -53,9 +53,8 @@
                         </div>
                     </div>
 
-                    <div class="mx-5 flex question-footer">
-                        <b>1</b> von <b>5</b> Fragen
-                        <button class="btn">Nächste Frage</button>
+                    <div id="questions" class="mx-5 flex question-footer">
+                        <!-- rendered by init() -->
                     </div>
                 </div>
             </div>
@@ -63,7 +62,7 @@
     </div>
 
 
-
+    <script src="templates.js"></script>
     <script src="database.js"></script>
     <script src="script.js"></script>
 </body>
