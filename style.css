@@ -5,3 +5,35 @@ nav {
 nav a {
     color: #fff!important;
 }
+
+.center {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.flex {
+    display: flex;
+}
+
+
+/* Menu */
+.menu {
+    background-color: #27355c;
+    height: 480px;
+    width: 10rem;
+
+    border-radius: 0.375rem 0 0  0.375rem;
+}
+
+.card img {
+    height: 150px;
+    object-fit: contain;
+    margin-top: 20px;
+}
+
+.main-card {
+    border-radius: 0 0.375rem 0.375rem 0px!important;
+    width: 600px!important;
+}
