@@ -5,7 +5,7 @@ let currentQuestion = 0;
 
 function init(){
     let questions = document.getElementById('questions');
-    questions.innerHTML = totalQuestionsHtml(questionArr);
+    questions.innerHTML = totalQuestionsHtml(questionArr, currentQuestion);
 
     showQuestionAndAnswers();
 }
@@ -42,5 +42,20 @@ function answer(selection){
 
 function nextQuestion(){
     currentQuestion++;
+    questions.innerHTML = totalQuestionsHtml(questionArr, currentQuestion);
     showQuestionAndAnswers();
+    resetAnswerButtons();
+}
+
+
+function resetAnswerButtons(){
+    document.getElementById('answer_1').parentNode.classList.remove('bg-danger');
+    document.getElementById('answer_2').parentNode.classList.remove('bg-danger');
+    document.getElementById('answer_3').parentNode.classList.remove('bg-danger');
+    document.getElementById('answer_4').parentNode.classList.remove('bg-danger');
+
+    document.getElementById('answer_1').parentNode.classList.remove('bg-success');
+    document.getElementById('answer_2').parentNode.classList.remove('bg-success');
+    document.getElementById('answer_3').parentNode.classList.remove('bg-success');
+    document.getElementById('answer_4').parentNode.classList.remove('bg-success');
 }
