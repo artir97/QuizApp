@@ -24,11 +24,11 @@
 
             </div>
             <div class="card card-body" id="end-screen" style="display: none;">
-                <div>
+                <div class="mb-3">
                     <img src="img/brain result.png" alt="">
                 </div>
                 <div>
-                    Quiz beendet!
+                    <b>Quiz beendet!</b>
                 </div>
                 <div id="total-answers">
                     <!-- rendered through a function -->
@@ -37,6 +37,7 @@
 
             <div class="card main-card" style="width: 18rem" id="question-body">
                 <img src="img/brain result.png" class="card-img" alt="...">
+
                 <div class="card-body">
                     <h3 class="mx-5" id="question">frage</h3>
 
@@ -45,7 +46,7 @@
                             <!-- rendered by init() -> showQuestionsAndAnswers() -->
                         </div>
                     </div>
-                    
+
                     <div class="card mb-2 mx-5 quiz-answer" onclick="answer('answer_2')">
                         <div class="card-body" id="answer_2">
                             <!-- rendered by init() -> showQuestionsAndAnswers() -->
@@ -58,13 +59,15 @@
                         </div>
                     </div>
 
-                    
+
                     <div class="card mb-2 mx-5 quiz-answer" onclick="answer('answer_4')">
-                        <div class="card-body"id="answer_4">
+                        <div class="card-body" id="answer_4">
                             <!-- rendered by init() -> showQuestionsAndAnswers() -->
                         </div>
                     </div>
-
+                    <div class="progress mt-2 mb-2 mx-5">
+                        <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%;"></div>
+                    </div>
                     <div id="questions" class="mx-5 flex question-footer">
                         <!-- rendered by init() -->
                     </div>

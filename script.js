@@ -20,6 +20,11 @@ function showQuestionAndAnswers(){
 
         totalAnswers.innerHTML = totalQuestionsAnsweredHtml(correctAnswers, questionArr);
     }else{
+        let percent = (currentQuestion+1) / questionArr.length;
+        percent = Math.round(percent * 100);
+        document.getElementById('progress-bar').innerHTML = `${percent}%`;
+        document.getElementById('progress-bar').style.width = `${percent}%`;
+        console.log('percent', percent);
         let question = questionArr[currentQuestion];
 
         document.getElementById('question').innerHTML = question['question'];
