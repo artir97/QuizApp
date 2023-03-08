@@ -1,5 +1,5 @@
 
-let questionArr = questions_japan;
+let questionArr = '';
 let currentQuestion = 0;
 let correctAnswers = 0;
 let AUDIO_SUCCESS = new Audio('audio/correct.mp3');
@@ -23,12 +23,12 @@ function showQuestionAndAnswers() {
 }
 
 
-function gameIsOver(){
+function gameIsOver() {
     return currentQuestion >= questionArr.length;
 }
 
 
-function showEndScreen(){
+function showEndScreen() {
     let totalAnswers = document.getElementById('total-answers');
     document.getElementById('end-screen').style = '';
     document.getElementById('question-body').style = 'display: none';
@@ -36,7 +36,7 @@ function showEndScreen(){
 }
 
 
-function showNextQuestion(){
+function showNextQuestion() {
     let question = questionArr[currentQuestion];
 
     document.getElementById('question').innerHTML = question['question'];
@@ -47,7 +47,7 @@ function showNextQuestion(){
 }
 
 
-function updateProgressBar(){
+function updateProgressBar() {
     let percent = (currentQuestion + 1) / questionArr.length;
     percent = Math.round(percent * 100);
     document.getElementById('progress-bar').innerHTML = `${percent}%`;
@@ -73,7 +73,7 @@ function answer(selection) {
     document.getElementById('next-button').disabled = false;
 }
 
-function rightAnswerSelected(selectedQuestionNumber, question){
+function rightAnswerSelected(selectedQuestionNumber, question) {
     return selectedQuestionNumber === question['right_answer'];
 }
 
@@ -102,9 +102,34 @@ function resetAnswerButtons() {
 function restartGame() {
     document.getElementById('end-screen').style = 'display: none';
     document.getElementById('question-body').style = '';
-    
+
     currentQuestion = 0;
     correctAnswers = 0;
 
     init();
+}
+
+
+function chooseTopic(topic) {
+    switch (topic) {
+        case 'ww1':
+            questionArr = questions_ww1;
+            break;
+
+        case 'ww2':
+            questionArr = questions_ww2;
+            break;
+
+        case 'viet-war':
+            questionArr = questions_vietnam;
+            break;
+
+        case 'jap-war':
+            questionArr = questions_japan;
+            break;
+
+        default:
+            break;
+    }
+    restartGame();
 }
