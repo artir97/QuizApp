@@ -12,14 +12,14 @@
 </head>
 
 <body onload="init()">
-    <nav class="navbar fixed-top">
+    <nav class="hide-nav navbar fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Quizzapp</a>
         </div>
     </nav>
 
     <div class="center">
-        <div class="flex">
+        <div class="flex column">
             <div class="menu-container">
                 <div class="menu">
                     <div id="ww1" onclick="chooseTopic('ww1')">WW1</div>
@@ -47,36 +47,36 @@
                 <img src="img/brain result.png" class="card-img" alt="...">
 
                 <div class="card-body">
-                    <h3 class="mx-5" id="question">frage</h3>
+                    <h3 class="mx-1" id="question">frage</h3>
 
-                    <div class="card mb-2 mx-5 quiz-answer" onclick="answer('answer_1')">
+                    <div id="answers" class="card mb-2 mx-1 quiz-answer" onclick="answer('answer_1')">
                         <div class="card-body" id="answer_1">
                             <!-- rendered by init() -> showQuestionsAndAnswers() -->
                         </div>
                     </div>
 
-                    <div class="card mb-2 mx-5 quiz-answer" onclick="answer('answer_2')">
+                    <div class="card mb-2 mx-1 quiz-answer" onclick="answer('answer_2')">
                         <div class="card-body" id="answer_2">
                             <!-- rendered by init() -> showQuestionsAndAnswers() -->
                         </div>
                     </div>
 
-                    <div class="card mb-2 mx-5 quiz-answer" onclick="answer('answer_3')">
+                    <div class="card mb-2 mx-1 quiz-answer" onclick="answer('answer_3')">
                         <div class="card-body" id="answer_3">
                             <!-- rendered by init() -> showQuestionsAndAnswers() -->
                         </div>
                     </div>
 
 
-                    <div class="card mb-2 mx-5 quiz-answer" onclick="answer('answer_4')">
+                    <div class="card mb-2 mx-1 quiz-answer" onclick="answer('answer_4')">
                         <div class="card-body" id="answer_4">
                             <!-- rendered by init() -> showQuestionsAndAnswers() -->
                         </div>
                     </div>
-                    <div class="progress mt-2 mb-2 mx-5">
+                    <div class="progress mt-2 mb-2 mx-1">
                         <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%;"></div>
                     </div>
-                    <div id="questions" class="mx-5 flex question-footer">
+                    <div id="questions" class="mx-1 flex question-footer">
                         <!-- rendered by init() -->
                     </div>
                 </div>
