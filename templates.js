@@ -7,3 +7,11 @@ function totalQuestionsHtml(questionArr, currentQuestion) {
     `
     );
 }
+
+function totalQuestionsAnsweredHtml(correct, questionArr){
+    return (
+    `
+    Du hast <b>${correct}</b> Fragen von <b>${questionArr.length}</b> richtig beantworet
+    `
+    );
+}

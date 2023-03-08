@@ -65,6 +65,8 @@ nav a {
 #end-screen {
     width: 600px;
     border: 1px solid #27355c;
+    border-radius: 0 0.375rem 0.375rem 0px;
+
 
     display: flex;
     flex-direction: column;

@@ -1,7 +1,7 @@
 
 let questionArr = questions_japan;
 let currentQuestion = 0;
-
+let correctAnswers = 0;
 
 function init(){
     let questions = document.getElementById('questions');
@@ -13,9 +13,12 @@ function init(){
 
 function showQuestionAndAnswers(){
     if (currentQuestion >= questionArr.length) {
-        // TODO: Show End Screen
+        let totalAnswers = document.getElementById('total-answers');
+
         document.getElementById('end-screen').style = '';
         document.getElementById('question-body').style = 'display: none';
+
+        totalAnswers.innerHTML = totalQuestionsAnsweredHtml(correctAnswers, questionArr);
     }else{
         let question = questionArr[currentQuestion];
 
@@ -35,7 +38,7 @@ function answer(selection){
     let idOfRightAnswer = `answer_${question['right_answer']}`;
 
     if (selectedQuestionNumber === question['right_answer']) {
-        console.log('You got the right answer');
+        correctAnswers++;
         document.getElementById(selection).parentNode.classList.add('bg-success');
     } else {
         console.log('The answer is wrong');
