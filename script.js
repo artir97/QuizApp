@@ -1,5 +1,5 @@
 
-let questionArr = '';
+let questionArr = questions_ww1;
 let currentQuestion = 0;
 let correctAnswers = 0;
 let AUDIO_SUCCESS = new Audio('audio/correct.mp3');
@@ -14,7 +14,7 @@ function init() {
 
 
 function showQuestionAndAnswers() {
-    if (gameIsOver()) {
+    if(gameIsOver()){
         showEndScreen();
     } else {
         updateProgressBar();
@@ -106,6 +106,7 @@ function restartGame() {
     currentQuestion = 0;
     correctAnswers = 0;
 
+    resetAnswerButtons();
     init();
 }
 
