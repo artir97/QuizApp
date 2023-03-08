@@ -26,11 +26,14 @@ function answer(selection){
     let question = questionArr[currentQuestion];
     let selectedQuestionNumber = Number(selection.slice(-1));
 
+    let idOfRightAnswer = `answer_${question['right_answer']}`;
+
     if (selectedQuestionNumber === question['right_answer']) {
         console.log('You got the right answer');
         document.getElementById(selection).parentNode.classList.add('bg-success');
     } else {
         console.log('The answer is wrong');
         document.getElementById(selection).parentNode.classList.add('bg-danger');
+        document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
     }
 }
