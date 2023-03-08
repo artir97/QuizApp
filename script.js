@@ -28,7 +28,9 @@ function answer(selection){
 
     if (selectedQuestionNumber === question['right_answer']) {
         console.log('You got the right answer');
+        document.getElementById(selection).parentNode.classList.add('bg-success');
     } else {
         console.log('The answer is wrong');
+        document.getElementById(selection).parentNode.classList.add('bg-danger');
     }
 }
