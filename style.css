@@ -61,3 +61,13 @@ nav a {
 .bg-success, .bg-danger {
     color: #fff;
 }
+
+#end-screen {
+    width: 600px;
+    border: 1px solid #27355c;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

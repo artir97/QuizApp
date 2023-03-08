@@ -12,13 +12,19 @@ function init(){
 
 
 function showQuestionAndAnswers(){
-    let question = questionArr[currentQuestion];
+    if (currentQuestion >= questionArr.length) {
+        // TODO: Show End Screen
+        document.getElementById('end-screen').style = '';
+        document.getElementById('question-body').style = 'display: none';
+    }else{
+        let question = questionArr[currentQuestion];
 
-    document.getElementById('question').innerHTML = question['question'];
-    document.getElementById('answer_1').innerHTML = question['answer_1'];
-    document.getElementById('answer_2').innerHTML = question['answer_2'];
-    document.getElementById('answer_3').innerHTML = question['answer_3'];
-    document.getElementById('answer_4').innerHTML = question['answer_4'];
+        document.getElementById('question').innerHTML = question['question'];
+        document.getElementById('answer_1').innerHTML = question['answer_1'];
+        document.getElementById('answer_2').innerHTML = question['answer_2'];
+        document.getElementById('answer_3').innerHTML = question['answer_3'];
+        document.getElementById('answer_4').innerHTML = question['answer_4'];
+    }
 }
 
 
