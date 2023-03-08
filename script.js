@@ -20,3 +20,15 @@ function showQuestionAndAnswers(){
     document.getElementById('answer_3').innerHTML = question['answer_3'];
     document.getElementById('answer_4').innerHTML = question['answer_4'];
 }
+
+
+function answer(selection){
+    let question = questionArr[currentQuestion];
+    let selectedQuestionNumber = Number(selection.slice(-1));
+
+    if (selectedQuestionNumber === question['right_answer']) {
+        console.log('You got the right answer');
+    } else {
+        console.log('The answer is wrong');
+    }
+}
