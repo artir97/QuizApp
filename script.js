@@ -48,7 +48,7 @@ function showNextQuestion() {
 
 
 function updateProgressBar() {
-    let percent = (currentQuestion + 1) / questionArr.length;
+    let percent = (currentQuestion) / questionArr.length;
     percent = Math.round(percent * 100);
     document.getElementById('progress-bar').innerHTML = `${percent}%`;
     document.getElementById('progress-bar').style.width = `${percent}%`;
@@ -63,8 +63,10 @@ function answer(selection) {
 
     if (rightAnswerSelected(selectedQuestionNumber, question)) {
         correctAnswer(selection);
+        disableAnswerButtons();
     } else {
         wrongAnswer(selection, idOfRightAnswer);
+        disableAnswerButtons();
     }
     enableNextBtn();
 }
@@ -84,6 +86,23 @@ function wrongAnswer(selection, idOfRightAnswer){
 }
 
 
+function disableAnswerButtons(){
+    document.getElementById('answer_1').parentNode.removeAttribute('onclick');
+    document.getElementById('answer_2').parentNode.removeAttribute('onclick');
+    document.getElementById('answer_3').parentNode.removeAttribute('onclick');
+    document.getElementById('answer_4').parentNode.removeAttribute('onclick');
+}
+
+
+function enableAnswerButtons(){
+    document.getElementById('answer_1').parentNode.setAttribute('onclick', 'answer("answer_1")');
+    document.getElementById('answer_2').parentNode.setAttribute('onclick', 'answer("answer_2")');
+    document.getElementById('answer_3').parentNode.setAttribute('onclick', 'answer("answer_3")');
+    document.getElementById('answer_4').parentNode.setAttribute('onclick', 'answer("answer_4")');
+}
+
+
+
 function enableNextBtn() {
     document.getElementById('next-button').disabled = false;
 }
@@ -97,6 +116,8 @@ function rightAnswerSelected(selectedQuestionNumber, question) {
 function nextQuestion() {
     currentQuestion++;
     questions.innerHTML = totalQuestionsHtml(questionArr, currentQuestion);
+
+    enableAnswerButtons();
     showQuestionAndAnswers();
     resetAnswerButtons();
 }
