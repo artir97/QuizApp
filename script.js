@@ -9,6 +9,7 @@ function init() {
     let questions = document.getElementById('questions');
     questions.innerHTML = totalQuestionsHtml(questionArr, currentQuestion);
 
+    updateProgressBar(0);
     showQuestionAndAnswers();
 }
 
@@ -17,7 +18,6 @@ function showQuestionAndAnswers() {
     if(gameIsOver()){
         showEndScreen();
     } else {
-        updateProgressBar();
         showNextQuestion();
     }
 }
@@ -47,8 +47,8 @@ function showNextQuestion() {
 }
 
 
-function updateProgressBar() {
-    let percent = (currentQuestion) / questionArr.length;
+function updateProgressBar(num) {
+    let percent = (currentQuestion + num) / questionArr.length;
     percent = Math.round(percent * 100);
     document.getElementById('progress-bar').innerHTML = `${percent}%`;
     document.getElementById('progress-bar').style.width = `${percent}%`;
@@ -64,9 +64,11 @@ function answer(selection) {
     if (rightAnswerSelected(selectedQuestionNumber, question)) {
         correctAnswer(selection);
         disableAnswerButtons();
+        updateProgressBar(1);
     } else {
         wrongAnswer(selection, idOfRightAnswer);
         disableAnswerButtons();
+        updateProgressBar(1);
     }
     enableNextBtn();
 }
@@ -143,6 +145,7 @@ function restartGame() {
     currentQuestion = 0;
     correctAnswers = 0;
 
+    enableAnswerButtons();
     resetAnswerButtons();
     init();
 }
