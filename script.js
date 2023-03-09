@@ -62,16 +62,32 @@ function answer(selection) {
     let idOfRightAnswer = `answer_${question['right_answer']}`;
 
     if (rightAnswerSelected(selectedQuestionNumber, question)) {
-        correctAnswers++;
-        document.getElementById(selection).parentNode.classList.add('bg-success');
-        AUDIO_SUCCESS.play();
+        correctAnswer(selection);
     } else {
-        document.getElementById(selection).parentNode.classList.add('bg-danger');
-        document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
-        AUDIO_FAIL.play();
+        wrongAnswer(selection, idOfRightAnswer);
     }
+    enableNextBtn();
+}
+
+
+function correctAnswer(selection){
+    correctAnswers++;
+    document.getElementById(selection).parentNode.classList.add('bg-success');
+    AUDIO_SUCCESS.play();
+}
+
+
+function wrongAnswer(selection, idOfRightAnswer){
+    document.getElementById(selection).parentNode.classList.add('bg-danger');
+    document.getElementById(idOfRightAnswer).parentNode.classList.add('bg-success');
+    AUDIO_FAIL.play();
+}
+
+
+function enableNextBtn() {
     document.getElementById('next-button').disabled = false;
 }
+
 
 function rightAnswerSelected(selectedQuestionNumber, question) {
     return selectedQuestionNumber === question['right_answer'];
